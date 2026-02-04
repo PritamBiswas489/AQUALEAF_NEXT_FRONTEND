@@ -1,0 +1,34 @@
+@import 'assets/styles/variable.scss';
+.industries-serve{
+    padding: 3rem 0 4rem 0;
+    position: relative;
+    z-index: 0;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/industries_bg.png) center center / cover no-repeat;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+}
+.industries-serve-box{
+    .industries-serve-box-img{
+        display: block;
+        width: 60px;
+        margin: 0 auto;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    h4{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 1.25rem;
+        text-align: center;
+        color: $bg-16;
+    }
+}
