@@ -36,7 +36,6 @@ const HomePage = (props) => {
             <HomeAppSection homeContent={homeData.content} services={services} />
             <IndustriesWeServe />
             <HomeTestimonials testimonialData={testimonialData} />
-            {/* <ServicesFaq serviceData={serviceData} /> */}
             <ServicesFaq className={`back-pattrn`} />
             <HomeSuccessProduct />
             <HomePartner />

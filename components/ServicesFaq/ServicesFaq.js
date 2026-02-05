@@ -9,6 +9,26 @@ import parse from 'html-react-parser';
 const { REACT_APP_RESOURCE_URL } = config();
 
 const ServicesFaq = ({ serviceData, className='' }) => {
+    const FaqContent = [
+
+        {
+            question: 'What services does AquaLeaf IT Solutions provide?',
+            answer: 'AquaLeaf IT Solutions provides custom software development, web application development, mobile app development, and cloud-based IT solutions. '
+
+        },
+        {
+            question: 'Who can work with AquaLeaf IT Solutions? ',
+            answer: 'We work with startups, small businesses, and enterprises looking for reliable and scalable software solutions.'
+        },
+        {
+            question: 'How much does custom software development cost?',
+            answer: 'The cost depends on project scope, features, and technology. We offer flexible pricing and a free consultation. '
+        },
+        {
+            question: 'Do you provide ongoing support after project delivery?',
+            answer: 'Yes, we provide post-launch support, maintenance, and scaling services.'
+        }
+    ];
     return (
         <>
             <section className={`servicesFaq ${className}`}>
@@ -23,7 +43,7 @@ const ServicesFaq = ({ serviceData, className='' }) => {
                         </div>
                         <div className='col-lg-6 col-sm-6 col-md-12 col-12'>
                             <div className='accordion faqAccordion' id='myAccordion'>
-                                {serviceData?.section6?.faq?.map((val, i) => (
+                                {FaqContent.map((val, i) => (
                                     <div className='accordion-item' key={`faqAccordion-${i}`}>
                                         <h2 className='accordion-header' id={`headingOne${i}`}>
                                             <button
