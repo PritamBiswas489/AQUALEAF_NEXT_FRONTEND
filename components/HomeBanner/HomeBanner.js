@@ -9,9 +9,10 @@ import Image from "next/image";
 import parse from "html-react-parser";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { MdClose } from 'react-icons/md';
 import ChatDropdown from "../ChatDropdown";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 const { REACT_APP_RESOURCE_URL } = config();
 
 function HomeBanner({ homeContent }) {
@@ -167,16 +168,23 @@ function HomeBanner({ homeContent }) {
                           placeholder='Please write your message in this box'
                       />
                   </div>
-                  <div className='form-group mb-0'>
-                      <ul className='d-flex align-items-center justify-content-between'>
-                          <li>
-                              <button type='submit' className='sendBtn'>
-                                  <span>Send</span>
-                              </button>
-                              {/* <ToastContainer /> */}
-                          </li>
-                      </ul>
-                  </div>
+              </div>
+              <div className='col-md-12'>
+                  <Form.Group controlId="formFileLg" className="file-upload">
+                      <Form.Control type="file" size="lg" />
+                  </Form.Group>
+              </div>
+              <div className='col-md-12'>
+                  <ul className='chat-btn-wrap'>
+                      <li>
+                          <button type='submit' className='sendBtn'>
+                              <span>Send</span>
+                          </button>
+                          {/* <ToastContainer /> */}
+                      </li>
+                      <li><IoMdCheckmarkCircleOutline />100% Confidential</li>
+                      <li><IoMdCheckmarkCircleOutline />We Sign NDA</li>
+                  </ul>
               </div>
           </div>
         </Modal.Body>

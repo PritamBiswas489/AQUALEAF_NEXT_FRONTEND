@@ -21,6 +21,8 @@ import { SettingsContent, sendContactData } from '@/helpers/data_utils';
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import ChatDropdown from '@/components/ChatDropdown';
+import { Form } from 'react-bootstrap';
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 function ContactUsPage(props) {
     const [token, setToken] = useState('');
@@ -197,16 +199,23 @@ function ContactUsPage(props) {
                                                 />
                                                 {errors.message && <InputErrorMsg error={errors.message?.message} />}
                                             </div>
-                                            <div className='form-group mb-0'>
-                                                <ul className='d-flex align-items-center justify-content-between'>
-                                                    <li>
-                                                        <button type='submit' className='sendBtn'>
-                                                            <span>Send</span>
-                                                        </button>
-                                                        <ToastContainer />
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                        </div>
+                                        <div className='col-md-12'>
+                                            <Form.Group controlId="formFileLg" className="file-upload">
+                                                <Form.Control type="file" size="lg" />
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-md-12'>
+                                            <ul className='chat-btn-wrap'>
+                                                <li>
+                                                    <button type='submit' className='sendBtn'>
+                                                        <span>Send</span>
+                                                    </button>
+                                                    <ToastContainer />
+                                                </li>
+                                                <li><IoMdCheckmarkCircleOutline />100% Confidential</li>
+                                                <li><IoMdCheckmarkCircleOutline />We Sign NDA</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </form>

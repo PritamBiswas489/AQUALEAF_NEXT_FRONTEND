@@ -206,3 +206,27 @@
 		width: 22rem;
 	}
 }
+.file-upload{
+	margin-bottom: 20px;
+	.form-control{
+		font-size: 1rem;
+	}	
+}
+.chat-btn-wrap{
+	display: flex;
+	align-items: center;
+	li{
+		color: #2f2f2f;
+		font-weight: 500;
+		font-size: 1rem;
+		svg{
+			color: #01c28d;
+    		margin-right: 5px;
+		}
+		+{
+			li{
+				padding-left: 0.75rem;
+			}
+		}
+	}
+}
