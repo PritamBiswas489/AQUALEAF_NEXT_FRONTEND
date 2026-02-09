@@ -151,3 +151,51 @@
         }
     }
 }
+
+.custom-modal {
+	.modal-dialog {
+		.modal-content {
+            border-radius: 20px;
+			.modal-body {
+				padding: 2rem;
+				.mobal-close {
+					position: absolute;
+					background-color: transparent;
+					border: none;
+					color: #f00;
+					right: 0.5rem;
+					top: 0.5rem;
+					font-size: 1.25rem;
+					padding: 0;
+					margin: 0;
+					line-height: 1;
+				}
+			}
+		}
+	}
+    .form-group {
+		margin-bottom: 25px;
+		position: relative;
+		label {
+			color: $bg-3;
+			margin-bottom: 0.938rem;
+			font-weight: 600;
+		}
+		.form-control {
+			background: 0 0;
+			border: 1px solid #dfdfdf;
+			height: 2.813rem;
+		}
+		textarea.form-control {
+			background: 0 0;
+			height: 6.25rem;
+			resize: none;
+		}
+		i {
+			position: absolute;
+			top: 0.813rem;
+			right: 0.813rem;
+			color: $bg-10;
+		}
+	}
+}

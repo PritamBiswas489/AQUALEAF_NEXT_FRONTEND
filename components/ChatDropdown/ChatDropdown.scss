@@ -1,0 +1,72 @@
+.contact-chat-dropdown{
+	position: relative;
+    margin-bottom: 20px;
+	.chat-dropdown-area{
+		display: block;
+		height: 2.813rem;
+		font-size: 16px;
+		line-height: 2.813rem;
+		color: #333;
+		border: 1px solid #dfdfdf;
+		padding: 0 40px 0 20px;
+		cursor: pointer;
+		position: relative;
+		background: #fff;
+		border-radius: 0.375rem;
+		&::before{
+			content: "";
+			background: url(../../assets/images/bottom-arrow.svg) no-repeat 0 0;
+			width: 15px;
+			height: 8px;
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			-webkit-transition: -webkit-transform .25s;
+			transition: -webkit-transform .25s;
+			transition: transform .25s;
+			transition: transform .25s,-webkit-transform .25s;
+			-webkit-transform-origin: center center;
+			transform-origin: center center;
+		}
+	}
+	&.open{
+		.chat-dropdown-area{
+			&::before{
+				transform: translateY(-50%) rotate(-180deg);
+			}
+		}	
+	}
+	.chat-dropdown-list{
+		padding: 15px;
+		background: #f5f5f5;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+		border: 1px solid #dfdfdf;
+		z-index: 10;
+		border-radius: 0.375rem;
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			li{
+				flex: 0 0 calc(100% / 2);
+				max-width: 100%;
+				padding-left: 7px;
+				margin: 5px 0;
+				cursor: pointer;
+				label,
+				input{
+					cursor: pointer;
+				}
+				label{
+					&::after{
+						color: #01c28d;
+					}
+				}
+			}
+		}
+	}
+}

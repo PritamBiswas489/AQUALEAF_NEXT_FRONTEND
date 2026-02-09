@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import InputErrorMsg from '@/components/InputErrorMsg/InputErrorMsg';
@@ -18,8 +18,9 @@ import config from '@/helpers/config';
 const { REACT_APP_RESOURCE_URL, REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY } = config();
 import Container from '@/containers/Container';
 import { SettingsContent, sendContactData } from '@/helpers/data_utils';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
+import ChatDropdown from '@/components/ChatDropdown';
 
 function ContactUsPage(props) {
     const [token, setToken] = useState('');
@@ -61,6 +62,9 @@ function ContactUsPage(props) {
             toast.error(result?.error?.message);
         }
     };
+
+    
+
     return (
         <>
             <Head>
@@ -98,7 +102,56 @@ function ContactUsPage(props) {
                             <div className='cntForm'>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <div className='row'>
+                                        <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                                            <div className='form-group'>
+                                                <input
+                                                    id='contactName'
+                                                    type='text'
+                                                    placeholder='Full Name'
+                                                    className='form-control'
+                                                />
+                                                <i className='fa fa-star' />
+                                            </div>
+                                        </div>
+                                        <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                                            <div className='form-group'>
+                                                <input
+                                                    id='contactEmail'
+                                                    type='text'
+                                                    placeholder='Work Email'
+                                                    className='form-control'
+                                                />
+                                                <i className='fa fa-star' />
+                                            </div>
+                                        </div>
+                                        <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                                            <div className='form-group'>
+                                                <input
+                                                    id='ph_no'
+                                                    type='text'
+                                                    placeholder='Phone Number'
+                                                    className='form-control'
+                                                    {...register('ph_no', { required: 'Phone No is required' })}
+                                                />
+                                                <i className='fa fa-star' />
+                                                {errors.ph_no && <InputErrorMsg error={errors.ph_no?.message} />}
+                                            </div>
+                                        </div>
+                                        <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                                            <div className='form-group'>
+                                                <input
+                                                    id=''
+                                                    type='text'
+                                                    placeholder='Company'
+                                                    className='form-control'
+                                                />
+                                                <i className='fa fa-star' />
+                                            </div>
+                                        </div>
                                         <div className='col-md-12'>
+                                            <ChatDropdown/>
+                                        </div>
+                                        {/* <div className='col-md-12'>
                                             <div className='form-group'>
                                                 <input
                                                     id='contactName'
@@ -132,7 +185,7 @@ function ContactUsPage(props) {
                                                 <i className='fa fa-star' />
                                                 {errors.email && <InputErrorMsg error={errors.email?.message} />}
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className='col-md-12'>
                                             <div className='form-group'>
                                                 <label>Write your message here</label>

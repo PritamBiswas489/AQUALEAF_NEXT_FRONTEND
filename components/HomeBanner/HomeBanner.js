@@ -8,10 +8,19 @@ import config from "@/helpers/config";
 import Image from "next/image";
 import parse from "html-react-parser";
 import Link from "next/link";
+import { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { MdClose } from 'react-icons/md';
+import ChatDropdown from "../ChatDropdown";
 const { REACT_APP_RESOURCE_URL } = config();
 
 function HomeBanner({ homeContent }) {
   const homeData = JSON.parse(homeContent);
+
+  const [showModal, setShowModal] = useState(false);
+  const handleShowShowModal = () => setShowModal(true);
+  const handleCloseShowModal = () => setShowModal(false);
+  
   return (
     <>
       <section className="banner d-flex justify-content-between align-items-center mobNone">
@@ -35,7 +44,7 @@ function HomeBanner({ homeContent }) {
                 <Link href={"javascript:void(0)"} className="caseStudy">Get a Free Consultation</Link>
               </li>
               <li>
-                <Link href={"javascript:void(0)"} className="caseStudy">Contact Us</Link>
+                <Link href={"javascript:void(0)"} onClick={handleShowShowModal} className="caseStudy">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -95,6 +104,83 @@ function HomeBanner({ homeContent }) {
           </div>
         </div>
       </section>
+
+      <Modal centered show={showModal} size="lg" onHide={handleCloseShowModal} className="custom-modal">        
+        <Modal.Body>
+          <Button className="mobal-close" onClick={handleCloseShowModal}>
+						<MdClose />
+					</Button>
+          <div className='row'>
+              <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                  <div className='form-group'>
+                      <input
+                          id='contactName'
+                          type='text'
+                          placeholder='Full Name'
+                          className='form-control'
+                      />
+                      <i className='fa fa-star' />
+                  </div>
+              </div>
+              <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                  <div className='form-group'>
+                      <input
+                          id='contactEmail'
+                          type='text'
+                          placeholder='Work Email'
+                          className='form-control'
+                      />
+                      <i className='fa fa-star' />
+                  </div>
+              </div>
+              <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                  <div className='form-group'>
+                      <input
+                          id='ph_no'
+                          type='text'
+                          placeholder='Phone Number'
+                          className='form-control'
+                      />
+                      <i className='fa fa-star' />
+                  </div>
+              </div>
+              <div className='col-xl-6 col-lg-6 col-sm-12 col-12'>
+                  <div className='form-group'>
+                      <input
+                          id=''
+                          type='text'
+                          placeholder='Company'
+                          className='form-control'
+                      />
+                      <i className='fa fa-star' />
+                  </div>
+              </div>
+              <div className='col-md-12'>
+                  <ChatDropdown/>
+              </div>
+              <div className='col-md-12'>
+                  <div className='form-group'>
+                      <label>Write your message here</label>
+                      <textarea
+                          id='contactMessage'
+                          className='form-control'
+                          placeholder='Please write your message in this box'
+                      />
+                  </div>
+                  <div className='form-group mb-0'>
+                      <ul className='d-flex align-items-center justify-content-between'>
+                          <li>
+                              <button type='submit' className='sendBtn'>
+                                  <span>Send</span>
+                              </button>
+                              {/* <ToastContainer /> */}
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

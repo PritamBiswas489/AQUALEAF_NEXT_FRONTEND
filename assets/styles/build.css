@@ -45,6 +45,7 @@
 	outline: thin dotted;
 	outline: 0px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
+	outline: none;
 }
 .checkbox input[type='checkbox']:checked + label::after,
 .checkbox input[type='radio']:checked + label::after {
