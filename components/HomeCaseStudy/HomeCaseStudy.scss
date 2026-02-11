@@ -9,6 +9,13 @@
 }
 .homeCaseStudy{
     .owlWrap{
-        max-block-size: 580px;
+        .owl-carousel{
+            .owl-stage-outer{
+                max-block-size: 580px;
+                .owl-stage{
+                    max-block-size: 580px;
+                }
+            }
+        }
     }
 }

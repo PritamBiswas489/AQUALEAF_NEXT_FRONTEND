@@ -70,32 +70,32 @@ function ChatDropdown({ homeContent }) {
       ]
   return (
     <>
-      <div ref={dropdownRef} className={`contact-chat-dropdown ${showDropDown ? 'open' : ''}`}>
-                      <div className="chat-dropdown-area" onClick={() => setShowDropDown(!showDropDown)}>
-                          {selectedItems.length === 0 
-                          ? "I’d like to chat about..."
-                          : selectedItems.length === 1 
-                          ? selectedItems[0]
-                          : `${selectedItems[0]} + ${selectedItems.length - 1} More`
-                          }
-                      </div>
-                      {showDropDown && (
-                          <div className="chat-dropdown-list">
-                              <ul>
-                                  {ChatDropDownData.map((val, i) => (
-                                  <li className='checkbox' key={i}>
-                                      <input type='checkbox' 
-                                      id={`checkbox-${val.id}`} 
-                                      checked={selectedItems.includes(val.title)} 
-                                      onChange={() => handleToggle(val.title)}
-                                      />
-                                      <label htmlFor={`checkbox-${val.id}`}>{val.title}</label>
-                                  </li>
-                                  ))}
-                              </ul>
-                          </div>
-                      )}
-                  </div>
+        <div ref={dropdownRef} className={`contact-chat-dropdown ${showDropDown ? 'open' : ''}`}>
+            <div className="chat-dropdown-area" onClick={() => setShowDropDown(!showDropDown)}>
+                {selectedItems.length === 0 
+                ? "I’d like to chat about..."
+                : selectedItems.length === 1 
+                ? selectedItems[0]
+                : `${selectedItems[0]} + ${selectedItems.length - 1} More`
+                }
+            </div>
+            {showDropDown && (
+                <div className="chat-dropdown-list">
+                    <ul>
+                        {ChatDropDownData.map((val, i) => (
+                        <li className='checkbox' key={i}>
+                            <input type='checkbox' 
+                            id={`checkbox-${val.id}`} 
+                            checked={selectedItems.includes(val.title)} 
+                            onChange={() => handleToggle(val.title)}
+                            />
+                            <label htmlFor={`checkbox-${val.id}`}>{val.title}</label>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>
     </>
   );
 }
