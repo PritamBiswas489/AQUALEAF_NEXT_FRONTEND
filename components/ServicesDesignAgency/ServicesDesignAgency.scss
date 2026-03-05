@@ -32,4 +32,23 @@
 		font-size: clamp(1rem, 0.955986rem + 0.140845vw, 1.125rem);
 		line-height: 1.64;
 	}
+	ul {
+		li {
+			font-size: 1.2vw;
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+			padding-left: 30px;
+			position: relative;
+			&:after {
+				content: '\f058';
+				font-family: 'Font Awesome 5 free';
+				font-weight: 900;
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: $bg-1;
+			}
+		}
+	}
 }
