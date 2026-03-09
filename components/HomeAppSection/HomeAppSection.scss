@@ -35,7 +35,8 @@
 
 .irRoundedBox {
 	background: $bg-6;
-	border-radius: 60px;
+	border-radius: 30px;
+	// border-radius: 60px;
 	padding: 10px;
 	border: $bg-1 1px solid;
 	&:not(:last-child) {
@@ -60,7 +61,8 @@
 	.irRoundedBoxCont {
 		flex-grow: 1;
 		h6 {
-			font-size: 18px;
+			font-size: 15px;
+			// font-size: 18px;
 			color: $bg-3;
 		}
 		p {
@@ -82,7 +84,8 @@
 }
 .insustryRoundLeft {
 	.irRoundedBoxCont {
-		padding-left: 2rem;
+		padding-left: 0.75rem;
+		// padding-left: 2rem;
 		padding-right: 0.3rem;
 		.irRoundedBoxIcon {
 			padding: 0 0.2rem 0 0.6rem;
@@ -91,7 +94,8 @@
 }
 .insustryRoundRight {
 	.irRoundedBoxCont {
-		padding-right: 2rem;
+		padding-right: 0.75rem;
+		// padding-right: 2rem;
 		text-align: right;
 		.irRoundedBoxIcon {
 			padding: 0 0.6rem 0 0.2rem;
@@ -111,7 +115,8 @@
 		position: absolute;
 		width: 30px;
 		height: 30px;
-		border-radius: 50px;
+		border-radius: 30px;
+		// border-radius: 50px;
 		background: $bg-10;
 		border: $bg-10 3px solid;
 		box-shadow: #fff 0 0 0 5px inset;
@@ -171,8 +176,10 @@
 		}
 		&.lirb-1 {
 			&:before {
-				right: -10px;
-				bottom: 16px;
+				right: -15px;
+				// right: -10px;
+				bottom: 7px;
+				// bottom: 16px;
 				transform: rotate(31deg);
 			}
 		}
@@ -185,8 +192,10 @@
 		}
 		&.lirb-3 {
 			&:before {
-				right: -10px;
-				top: 17px;
+				right: -15px;
+				top: 7px;
+				// right: -10px;
+				// top: 17px;
 				transform: rotate(-30deg);
 			}
 		}
@@ -208,8 +217,10 @@
 		}
 		&.rirb-1 {
 			&:before {
-				left: -10px;
-				bottom: 16px;
+				left: -15px;
+				bottom: 7px;
+				// left: -10px;
+				// bottom: 16px;
 				transform: rotate(-31deg);
 			}
 		}
@@ -222,8 +233,10 @@
 		}
 		&.rirb-3 {
 			&:before {
-				left: -10px;
-				top: 17px;
+				left: -15px;
+				top: 10px;
+				// left: -10px;
+				// top: 17px;
 				transform: rotate(30deg);
 			}
 		}
